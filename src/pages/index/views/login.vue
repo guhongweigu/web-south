@@ -94,7 +94,8 @@ h6 {
   width: 480px;
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 3px;
-  margin: 100px 30% 0 30%;
+  left: 35%;
+  top: 10%;
   height: 400px;
   position: fixed;
 }
