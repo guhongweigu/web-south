@@ -22,5 +22,10 @@ export default new Router({
       name: 'template-one',
       component: () => import('@/pages/index/views/register.vue'),
     },
+    {
+      path: '/down',
+      name: 'template-one',
+      component: () => import('@/pages/index/views/down.vue'),
+    },
   ],
 });
