@@ -99,7 +99,7 @@ export default {
   width: 1200px;
 }
 .top {
-	    position: relative;
+  position: relative;
   height: 40px;
   line-height: 40px;
   background: #cccccc;
@@ -163,10 +163,10 @@ export default {
 }
 .banner {
   width: 100%;
-      position: relative;
+  position: relative;
 }
 /deep/.el-carousel__container {
-  min-height:100vh;
+  min-height: 100vh;
 }
 .imgList {
   width: 100%;
