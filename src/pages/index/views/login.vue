@@ -98,7 +98,7 @@ h6 {
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 3px;
   left: 35%;
-  top: 10%;
+  top: 20%;
   height: 400px;
   position: fixed;
 }
