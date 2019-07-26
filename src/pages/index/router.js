@@ -17,5 +17,10 @@ export default new Router({
       name: 'template-one',
       component: () => import('@/pages/index/views/login.vue'),
     },
+    {
+      path: '/register',
+      name: 'template-one',
+      component: () => import('@/pages/index/views/register.vue'),
+    },
   ],
 });
