@@ -11,7 +11,11 @@ export default {
 </script>
 
 <style lang="scss">
+html{
+	overflow-x:hidden; overflow-y:auto;
+}
 body {
   margin: 0;
+  overflow-x:hidden;
 }
 </style>
