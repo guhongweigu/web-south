@@ -55,7 +55,7 @@
           <div class="block">
             <el-carousel height="540px" :autoplay="true">
               <el-carousel-item v-for="(item, index) in imgList" :key="index">
-                <img :src="item.url" class="imgList"  />
+                <img :src="item.url" class="imgList" />
               </el-carousel-item>
             </el-carousel>
           </div>
@@ -67,7 +67,8 @@
             <el-col :span="24" class="downTop">
               <span class="text">长春大学版权所有</span>
               <span class="line">|</span>
-              <span class="text">域名备案信息：吉ICP备05001994号-6</span> | <span class="text">
+              <span class="text">域名备案信息：吉ICP备05001994号-6</span> |
+              <span class="text">
                 <el-link :underline="false" href="http://www.bibibi.net" target="_blank">技术支持：云研科技</el-link>
               </span>
             </el-col>
@@ -96,11 +97,7 @@ export default {
   components: {},
   data: () => ({
     input: '',
-    imgList: [
-      { url: require('@/assets/banner.jpg') },
-      { url: require('@/assets/banner2.jpg') },
-      { url: require('@/assets/banner3.jpg') },
-    ],
+    imgList: [{ url: require('@/assets/banner.jpg') }, { url: require('@/assets/banner2.jpg') }, { url: require('@/assets/banner3.jpg') }],
   }),
   created() {},
   computed: {},
@@ -126,11 +123,16 @@ li {
   padding: 0;
   list-style: none;
 }
-p{
+p {
   margin: 0;
   padding: 0;
 }
-h1,h2,h3,h4,h5,h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
   padding: 0;
 }
@@ -147,14 +149,14 @@ h1,h2,h3,h4,h5,h6{
   color: #003264;
   margin: 0 15px 0 0;
 }
-.topTit .el-link:hover{
+.topTit .el-link:hover {
   text-decoration: underline;
 }
 .el-dropdown {
   margin: 0 15px 0 0;
   color: #003264;
 }
-.el-dropdown:hover{
+.el-dropdown:hover {
   text-decoration: underline;
 }
 .topTitHome {
@@ -165,94 +167,92 @@ h1,h2,h3,h4,h5,h6{
   height: 40px;
   line-height: 40px;
 }
-.topErweima{
+.topErweima {
   width: 100px;
   height: 100px;
   text-align: center;
   line-height: 100px;
 }
-.topLogin{
+.topLogin {
   float: left;
   width: 100px;
   height: 80px;
   text-align: center;
   padding: 10px 0;
 }
-.topLogin i{
+.topLogin i {
   width: 100%;
   font-size: 50px;
   color: #850000;
 }
-.topLogin span{
+.topLogin span {
   width: 100%;
-  height:20px;
+  height: 20px;
   text-align: center;
   line-height: 20px;
 }
-.topLogin:hover span{
+.topLogin:hover span {
   color: #850000;
 }
-/deep/.topSearch .el-input__inner{
-height: 30px;
-border-radius: 0;
+/deep/.topSearch .el-input__inner {
+  height: 30px;
+  border-radius: 0;
 }
-.topSearch .el-button{
+.topSearch .el-button {
   padding: 6px 15px;
   border-radius: 0;
   background: #003264;
   border-color: #003264;
 }
-.banner{
+.banner {
   width: 100%;
   height: 540px;
 }
-.imgList{
+.imgList {
   width: 100%;
-  height:100%;
+  height: 100%;
 }
-/deep/.el-carousel__indicators--horizontal{
+/deep/.el-carousel__indicators--horizontal {
   display: none;
 }
 
-
-
-
-.down{
+.down {
   width: 100%;
   height: 50px;
   padding: 15px 0;
   background: #ccc;
   color: #003264;
 }
-.downTop{
+.downTop {
   height: 22px;
   line-height: 22px;
   font-size: 12px;
 }
-.downTop .text{
+.downTop .text {
   padding: 0 8px;
 }
-.downTop .el-link{
+.downTop .el-link {
   font-size: 12px;
-   color: #003264;
+  color: #003264;
 }
-.downCon{
+.downCon {
   height: 22px;
   line-height: 22px;
-  color: #003264;font-size: 12px;
+  color: #003264;
+  font-size: 12px;
 }
-.downCon div{
+.downCon div {
   float: left;
 }
-.downCon div .ii-tit{
+.downCon div .ii-tit {
   float: left;
   padding: 0 0 0 8px;
 }
-.downCon div .ii-text{
+.downCon div .ii-text {
   float: left;
   padding: 0 8px;
 }
-.downCon p{
+.downCon p {
   float: right;
 }
 </style>

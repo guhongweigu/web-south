@@ -1,6 +1,6 @@
 <template lang="html">
   <div id="login">
-    <div class="w_0100 login">
+    <div class="w_0100" :style="'overflow-y: auto;background: url(' + img.bg + ')center no-repeat;'">
       <div class="w_1200" style="height: 100vh;">
         <el-col :span="24" class="loginTit">
           <el-col :span="24" class="text">
@@ -49,6 +49,9 @@ export default {
       name: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
       pw: [{ required: true, message: '请输入密码', trigger: 'blur' }],
     },
+    img: {
+      bg: require('@/assets/login.jpeg'),
+    },
   }),
   created() {},
   computed: {},
@@ -82,14 +85,14 @@ h6 {
   margin: 0;
   padding: 0;
 }
-.login {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  background: url(/img/login.046b46da.jpeg);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+// .login {
+//   position: relative;
+//   width: 100%;
+//   height: 100vh;
+//   background: url(/img/login.046b46da.jpeg);
+//   background-repeat: no-repeat;
+//   background-size: cover;
+// }
 .loginTit {
   width: 480px;
   background-color: rgba(0, 0, 0, 0.6);
