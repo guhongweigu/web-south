@@ -139,7 +139,7 @@ h6 {
 .downTit p {
   padding: 3px 0;
 }
-/deep/.el-input__inner{
-	color: #fff;
+/deep/.el-input__inner {
+  color: #fff;
 }
 </style>

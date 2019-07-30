@@ -1,6 +1,6 @@
-<template lang="html">
+<template>
   <div id="index">
-    <el-row>
+    <el-row style="width:100%;height:100vh;overflow:hidden;">
       <el-col :span="24" class="top">
         <div class="w_1200">
           <el-col :span="8">
@@ -163,10 +163,11 @@ export default {
 }
 .banner {
   width: 100%;
-  position: relative;
+  position: absolute;
+  top: 40px;
 }
 /deep/.el-carousel__container {
-  min-height: 100vh;
+  min-height: 538px;
 }
 .imgList {
   width: 100%;
@@ -176,7 +177,8 @@ export default {
   display: none;
 }
 .down {
-  position: relative;
+  position: absolute;
+  z-index: 999;
   bottom: 0;
   width: 100%;
   height: 80px;
