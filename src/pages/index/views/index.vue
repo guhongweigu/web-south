@@ -55,6 +55,46 @@
           </el-carousel>
         </div>
       </el-col>
+      <el-col :span="24" class="menus">
+        <div class="w_1200">
+          <el-col :span="9" class="menusLeft">
+            <el-image style="width: 450px; height: 112px;" :src="url"></el-image>
+            <el-col :span="24" class="menusLeftTit"><span>东北高师就业联盟</span></el-col>
+          </el-col>
+          <el-col :span="15" class="menusRight">
+            <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+              <el-menu-item index="1"><i class="el-icon-s-home"></i>首页</el-menu-item>
+              <el-submenu index="2">
+                <template slot="title">
+                  <i class="el-icon-s-home"></i>
+                  学生服务
+                </template>
+                <el-menu-item index="2-1">选项1</el-menu-item>
+                <el-menu-item index="2-2">选项2</el-menu-item>
+                <el-menu-item index="2-3">选项3</el-menu-item>
+              </el-submenu>
+              <el-submenu index="3">
+                <template slot="title">
+                  <i class="el-icon-s-home"></i>
+                  招聘单位
+                </template>
+                <el-menu-item index="3-1">选项1</el-menu-item>
+                <el-menu-item index="3-2">选项2</el-menu-item>
+                <el-menu-item index="3-3">选项3</el-menu-item>
+              </el-submenu>
+              <el-submenu index="4">
+                <template slot="title">
+                  <i class="el-icon-s-home"></i>
+                  就业部门
+                </template>
+                <el-menu-item index="4-1">选项1</el-menu-item>
+                <el-menu-item index="4-2">选项2</el-menu-item>
+                <el-menu-item index="4-3">选项3</el-menu-item>
+              </el-submenu>
+            </el-menu>
+          </el-col>
+        </div>
+      </el-col>
       <el-col :span="24" class="down">
         <div class="w_1200">
           <el-col :span="24" class="downTit">
@@ -86,10 +126,16 @@ export default {
   data: () => ({
     input: '',
     imgList: [{ url: require('@/assets/banner.jpg') }, { url: require('@/assets/banner2.jpg') }, { url: require('@/assets/banner3.jpg') }],
+    url: require('@/assets/logo1.jpg'),
+    activeIndex: '',
   }),
   created() {},
   computed: {},
-  methods: {},
+  methods: {
+    handleSelect(key, keyPath) {
+      console.log(key, keyPath);
+    },
+  },
 };
 </script>
 
@@ -97,6 +143,96 @@ export default {
 .w_1200 {
   margin: 0 auto;
   width: 1200px;
+}
+.menus {
+  position: relative;
+  top: 50px;
+  color: #fff;
+  z-index: 999;
+}
+.menusLeft {
+  height: 140px;
+}
+.menusLeftTit {
+  height: 29px;
+  background: #850000;
+  text-align: right;
+  line-height: 28px;
+  margin: -4px 0 0 0;
+}
+.menusLeftTit span {
+  display: inline-block;
+  padding: 0 10px;
+  font-size: 12px;
+  background-color: rgba(169, 13, 13, 0.8);
+}
+/deep/.el-submenu__icon-arrow {
+  display: none;
+}
+.menusRight {
+  height: 80px;
+  background: #850000;
+  margin: 20px 0 0 0;
+}
+.el-menu-demo {
+  background: #850000;
+  height: 80px;
+  border-bottom: none;
+}
+.el-menu-item {
+  height: 80px;
+  line-height: 80px;
+  padding: 0 30px;
+  font-size: 18px;
+  color: #fff;
+}
+.el-menu--horizontal > .el-menu-item:not(.is-disabled):focus,
+.el-menu--horizontal > .el-menu-item:not(.is-disabled):hover,
+.el-menu--horizontal > .el-submenu .el-submenu__title:hover {
+  background: #a90d0d;
+}
+.el-menu--horizontal .el-menu-item:not(.is-disabled):focus,
+.el-menu--horizontal .el-menu-item:not(.is-disabled):hover {
+  color: #fff;
+}
+
+.el-menu-item .el-icon-s-home {
+  width: 48px;
+  height: 48px;
+  background: #a90d0d;
+  border-radius: 900px;
+  line-height: 48px;
+  text-align: center;
+  font-size: 35px;
+  color: #fff;
+}
+.el-submenu {
+  height: 80px;
+  line-height: 80px;
+  font-size: 18px;
+  color: #fff;
+}
+.el-submenu .el-icon-s-home {
+  width: 48px;
+  height: 48px;
+  background: #a90d0d;
+  border-radius: 900px;
+  line-height: 48px;
+  text-align: center;
+  font-size: 35px;
+  color: #fff;
+}
+/deep/.el-submenu__title {
+  height: 80px !important;
+  line-height: 80px !important;
+  color: #fff !important;
+  font-size: 18px;
+}
+.is-opened {
+  background: #a90d0d;
+}
+/deep/.el-submenu__title:hover {
+  background-color: #a90d0d !important;
 }
 .top {
   position: relative;
@@ -161,6 +297,7 @@ export default {
   background: #003264;
   border-color: #003264;
 }
+
 .banner {
   width: 100%;
   position: absolute;
@@ -176,6 +313,7 @@ export default {
 /deep/.el-carousel__indicators--horizontal {
   display: none;
 }
+
 .down {
   position: absolute;
   z-index: 999;
