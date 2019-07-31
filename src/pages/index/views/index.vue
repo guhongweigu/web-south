@@ -69,27 +69,114 @@
                   <i class="el-icon-s-home"></i>
                   学生服务
                 </template>
-                <el-menu-item index="2-1">选项1</el-menu-item>
-                <el-menu-item index="2-2">选项2</el-menu-item>
-                <el-menu-item index="2-3">选项3</el-menu-item>
+                <el-collapse>
+                  <el-col :span="24" class="menuStu">
+                    <el-col :span="5" class="menuStuTit">招聘信息</el-col>
+                    <el-col :span="19" class="menuStuTxt">
+                      <ul>
+                        <li v-for="(tag, index) in tags" :key="index" :type="tag.type">
+                          <el-link :underline="false">{{ tag.name }}</el-link>
+                        </li>
+                      </ul>
+                    </el-col>
+                    <el-col :span="5" class="menuStuTit">就业指导</el-col>
+                    <el-col :span="19" class="menuStuTxt">
+                      <ul>
+                        <li v-for="(tag, index) in tags1" :key="index" :type="tag.type">
+                          <el-link :underline="false">{{ tag.name }}</el-link>
+                        </li>
+                      </ul>
+                    </el-col>
+                    <el-col :span="5" class="menuStuTit">生涯服务</el-col>
+                    <el-col :span="19" class="menuStuTxt">
+                      <ul>
+                        <li v-for="(tag, index) in tags2" :key="index" :type="tag.type">
+                          <el-link :underline="false">{{ tag.name }}</el-link>
+                        </li>
+                      </ul>
+                    </el-col>
+                    <el-col :span="5" class="menuStuTit">校友动态</el-col>
+                    <el-col :span="19" class="menuStuTxt">
+                      <ul>
+                        <li v-for="(tag, index) in tags3" :key="index" :type="tag.type">
+                          <el-link :underline="false">{{ tag.name }}</el-link>
+                        </li>
+                      </ul>
+                    </el-col>
+                    <el-col :span="5" class="menuStuTit">&nbsp;</el-col>
+                    <el-col :span="19" class="menuStuTxt menuStuBtn">
+                      <el-button>学生服务登录</el-button>
+                    </el-col>
+                  </el-col>
+                </el-collapse>
               </el-submenu>
               <el-submenu index="3">
                 <template slot="title">
                   <i class="el-icon-s-home"></i>
                   招聘单位
                 </template>
-                <el-menu-item index="3-1">选项1</el-menu-item>
-                <el-menu-item index="3-2">选项2</el-menu-item>
-                <el-menu-item index="3-3">选项3</el-menu-item>
+                <el-collapse>
+                  <el-col :span="24" class="menuStu">
+                    <el-col :span="5" class="menuStuTit">生源信息</el-col>
+                    <el-col :span="19" class="menuStuTxt">
+                      <ul>
+                        <li v-for="(tag, index) in tags4" :key="index" :type="tag.type">
+                          <el-link :underline="false">{{ tag.name }}</el-link>
+                        </li>
+                      </ul>
+                    </el-col>
+                    <el-col :span="5" class="menuStuTit">单位服务指南</el-col>
+                    <el-col :span="19" class="menuStuTxt">
+                      <ul>
+                        <li v-for="(tag, index) in tags5" :key="index" :type="tag.type">
+                          <el-link :underline="false">{{ tag.name }}</el-link>
+                        </li>
+                      </ul>
+                    </el-col>
+                    <el-col :span="5" class="menuStuTit">&nbsp;</el-col>
+                    <el-col :span="19" class="menuStuTxt menuStuBtn">
+                      <el-button>招聘单位登录</el-button>
+                    </el-col>
+                  </el-col>
+                </el-collapse>
               </el-submenu>
               <el-submenu index="4">
                 <template slot="title">
                   <i class="el-icon-s-home"></i>
                   就业部门
                 </template>
-                <el-menu-item index="4-1">选项1</el-menu-item>
-                <el-menu-item index="4-2">选项2</el-menu-item>
-                <el-menu-item index="4-3">选项3</el-menu-item>
+                <el-collapse>
+                  <el-col :span="24" class="menuStu">
+                    <el-col :span="5" class="menuStuTit">信息发布</el-col>
+                    <el-col :span="19" class="menuStuTxt">
+                      <ul>
+                        <li v-for="(tag, index) in tags6" :key="index" :type="tag.type">
+                          <el-link :underline="false">{{ tag.name }}</el-link>
+                        </li>
+                      </ul>
+                    </el-col>
+                    <el-col :span="5" class="menuStuTit">服务指南</el-col>
+                    <el-col :span="19" class="menuStuTxt">
+                      <ul>
+                        <li v-for="(tag, index) in tags7" :key="index" :type="tag.type">
+                          <el-link :underline="false">{{ tag.name }}</el-link>
+                        </li>
+                      </ul>
+                    </el-col>
+                    <el-col :span="5" class="menuStuTit">关于我们</el-col>
+                    <el-col :span="19" class="menuStuTxt">
+                      <ul>
+                        <li v-for="(tag, index) in tags8" :key="index" :type="tag.type">
+                          <el-link :underline="false">{{ tag.name }}</el-link>
+                        </li>
+                      </ul>
+                    </el-col>
+                    <el-col :span="5" class="menuStuTit">&nbsp;</el-col>
+                    <el-col :span="19" class="menuStuTxt menuStuBtn">
+                      <el-button>就业部门登录</el-button>
+                    </el-col>
+                  </el-col>
+                </el-collapse>
               </el-submenu>
             </el-menu>
           </el-col>
@@ -128,6 +215,24 @@ export default {
     imgList: [{ url: require('@/assets/banner.jpg') }, { url: require('@/assets/banner2.jpg') }, { url: require('@/assets/banner3.jpg') }],
     url: require('@/assets/logo1.jpg'),
     activeIndex: '',
+    tags: [{ name: '校内宣讲会' }, { name: '校外宣讲会' }, { name: '双选会' }, { name: '在线招聘' }],
+    tags1: [
+      { name: '就业指导' },
+      { name: '培训与活动' },
+      { name: '文档下载' },
+      { name: '政策法规' },
+      { name: '签约与权益' },
+      { name: '离校手续' },
+      { name: '改派迁移' },
+      { name: '常用信息查询' },
+    ],
+    tags2: [{ name: '职业测评' }, { name: '生涯活动' }, { name: '创业指导' }, { name: '长大就业报' }],
+    tags3: [{ name: '校友会' }],
+    tags4: [{ name: '毕业生人数' }, { name: '专业介绍' }, { name: '毕业生生源' }],
+    tags5: [{ name: 'CCUer大数据' }, { name: '联系我们' }],
+    tags6: [{ name: '通知公告' }, { name: '就业新闻' }],
+    tags7: [{ name: '下载专区' }, { name: '留言咨询' }],
+    tags8: [{ name: '关于我们' }],
   }),
   created() {},
   computed: {},
@@ -143,6 +248,15 @@ export default {
 .w_1200 {
   margin: 0 auto;
   width: 1200px;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+li {
+  margin: 0;
+  padding: 0;
 }
 .menus {
   position: relative;
@@ -171,11 +285,10 @@ export default {
 }
 .menusRight {
   height: 80px;
-  background: #850000;
   margin: 20px 0 0 0;
 }
 .el-menu-demo {
-  background: #850000;
+  background-color: rgba(133, 0, 0, 0.8);
   height: 80px;
   border-bottom: none;
 }
@@ -233,6 +346,43 @@ export default {
 }
 /deep/.el-submenu__title:hover {
   background-color: #a90d0d !important;
+}
+/deep/.el-collapse {
+  border-top: transparent;
+  border-bottom: transparent;
+}
+.menuStu {
+  width: 600px;
+  background-color: rgba(169, 13, 13, 0.8);
+  padding: 10px 0;
+}
+.menuStuTit {
+  text-align: center;
+  height: 33px;
+  line-height: 33px;
+  color: #fff;
+}
+.menuStuTxt {
+  border-bottom: 1px dashed #fff;
+}
+.menuStuTxt ul li {
+  float: left;
+  padding: 8px 20px;
+}
+/deep/.menuStuTxt ul li .el-link {
+  color: #fff;
+}
+.menuStuTxt ul li:hover {
+  background-color: #850000;
+}
+.menuStuBtn {
+  border-bottom: none;
+}
+.menuStuBtn .el-button {
+  background-color: #850000;
+  color: #fff;
+  border: none;
+  margin: 15px 0 0 0;
 }
 .top {
   position: relative;
