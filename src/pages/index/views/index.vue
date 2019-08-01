@@ -182,6 +182,11 @@
           </el-col>
         </div>
       </el-col>
+      <el-col :span="24" class="main">
+        <div class="w_1200">
+          信息展示
+        </div>
+      </el-col>
       <el-col :span="24" class="down">
         <div class="w_1200">
           <el-col :span="24" class="downTit">
@@ -463,7 +468,14 @@ li {
 /deep/.el-carousel__indicators--horizontal {
   display: none;
 }
-
+.main {
+  position: absolute;
+  bottom: 80px;
+  color: #000;
+  z-index: 9999;
+  background: #fff;
+  height: 56px;
+}
 .down {
   position: absolute;
   z-index: 999;
