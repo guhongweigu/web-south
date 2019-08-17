@@ -182,10 +182,80 @@
           </el-col>
         </div>
       </el-col>
+      <el-row style="height:20px;background:red; position: absolute;bottom: 80px;"></el-row>
       <el-col :span="24" class="main">
-        <div class="w_1200">
-          信息展示
-        </div>
+        <el-col :span="24" class="mainTit">
+          <div class="w_1200">
+            <el-row>
+              <el-col :span="7" class="mainLeft">
+                <el-col :span="24" class="mainLeftTop">
+                  <el-col :span="3" class="leftTopImg">
+                    图片
+                  </el-col>
+                  <el-col :span="10" class="leftTopTit">
+                    <span>就业新闻</span>
+                    <el-link :underline="false">MORE<i class="el-icon-bottom-right" style="color: #850000;font-weight: bold;"></i></el-link>
+                  </el-col>
+                  <el-col :span="11" class="leftTopLink">
+                    <el-link :underline="false" class="active">就业新闻</el-link>
+                    <span style="display: inline-block;width: 1px; height: 20px;margin: -5px 5px;background: #850000;"></span>
+                    <el-link :underline="false">通知公告</el-link>
+                  </el-col>
+                </el-col>
+                <el-col :span="24" class="mainLeftDown">
+                  <el-col :span="24" v-for="(item, index) in list" :key="index" class="leftDownList">
+                    <el-col :span="18" class="leftDownlink textOver">{{ item.company }}</el-col>
+                    <el-col :span="6">{{ item.date }}</el-col>
+                  </el-col>
+                </el-col>
+              </el-col>
+              <el-col :span="12">
+                <el-col :span="24" class="mainLeftTop">
+                  <el-col :span="3" class="leftTopImg">
+                    图片
+                  </el-col>
+                  <el-col :span="8" class="leftTopTit">
+                    <span>校内宣讲会</span>
+                    <el-link :underline="false">MORE<i class="el-icon-bottom-right" style="color: #850000;font-weight: bold;"></i></el-link>
+                  </el-col>
+                  <el-col :span="13" class="leftTopLink">
+                    <el-link :underline="false" class="active">校内宣讲会</el-link>
+                    <span style="display: inline-block;width: 1px; height: 20px;margin: -5px 5px;background: #850000;"></span>
+                    <el-link :underline="false">校外宣讲会</el-link>
+                    <span style="display: inline-block;width: 1px; height: 20px;margin: -5px 5px;background: #850000;"></span>
+                    <el-link :underline="false">双选会</el-link>
+                    <span style="display: inline-block;width: 1px; height: 20px;margin: -5px 5px;background: #850000;"></span>
+                    <el-link :underline="false">在线招聘</el-link>
+                  </el-col>
+                </el-col>
+                <el-col :span="24">
+                  <el-col :span="12" v-for="(item, index) in listjob" :key="index" class="leftDownList">
+                    <el-col :span="5" style="text-align: center;font-size: 20px;background: #850000;color: #FFFFFF;">
+                      {{ item.date }}
+                    </el-col>
+                    <el-col :span="15">
+                      <el-col :sapn="24" class="comHover textOver" style="padding:0 5px;color: #850000;">{{ item.company }}</el-col>
+                      <el-col :sapn="24" class="textOver" style="padding:5px;">
+                        <span>{{ item.school }}</span
+                        >&nbsp;<span>{{ item.address }}</span>
+                      </el-col>
+                    </el-col>
+                    <el-col :span="4">
+                      <el-col :sapn="24" style="color: red;text-align:center;">{{ item.time }}</el-col>
+                      <el-col :sapn="24">
+                        &nbsp;
+                      </el-col>
+                      <el-col :span="24" style="    color: #666;"> <i class="el-icon-view"></i>{{ item.num }} </el-col>
+                    </el-col>
+                  </el-col>
+                </el-col>
+              </el-col>
+              <el-col :span="5" style="background:#850000;height:326px;color:#fff;">
+                <el-calendar v-model="value"> </el-calendar>
+              </el-col>
+            </el-row>
+          </div>
+        </el-col>
       </el-col>
       <el-col :span="24" class="down">
         <div class="w_1200">
@@ -206,6 +276,12 @@
           </el-col>
         </div>
       </el-col>
+      <el-row style=" position: fixed;z-index: 9999;right: 6%;top: 220px;">
+        <el-button class="guanbiBtn" onClick="javascript:this.parentNode.style.display='none';" title="">关闭</el-button>
+        <el-link :underline="false">
+          <el-image style="width: 300px; height: 128px" :src="urlSchool"></el-image>
+        </el-link>
+      </el-row>
     </el-row>
   </div>
 </template>
@@ -219,6 +295,7 @@ export default {
     input: '',
     imgList: [{ url: require('@/assets/banner.jpg') }, { url: require('@/assets/banner2.jpg') }, { url: require('@/assets/banner3.jpg') }],
     url: require('@/assets/logo1.jpg'),
+    urlSchool: require('@/assets/school.jpg'),
     activeIndex: '',
     tags: [{ name: '校内宣讲会' }, { name: '校外宣讲会' }, { name: '双选会' }, { name: '在线招聘' }],
     tags1: [
@@ -238,8 +315,38 @@ export default {
     tags6: [{ name: '通知公告' }, { name: '就业新闻' }],
     tags7: [{ name: '下载专区' }, { name: '留言咨询' }],
     tags8: [{ name: '关于我们' }],
+    drawer: false,
+    direction: 'btt',
+    list: [{ company: '我校2019届毕业生春季招聘系列活动现已正式启动', date: '2019-03-04' }],
+    listjob: [
+      {
+        date: '05月30日',
+        company: '我校2019届毕业生春季招聘系列活动现已正式启动',
+        school: '长春大学',
+        address: '教学楼二楼阶梯教室',
+        time: '13:00',
+        num: '1200',
+      },
+      {
+        date: '05月30日',
+        company: '我校2019届毕业生春季招聘系列活动现已正式启动',
+        school: '长春大学',
+        address: '教学楼二楼阶梯教室',
+        time: '13:00',
+        num: '1200',
+      },
+    ],
+    value: new Date(),
   }),
   created() {},
+  mounted() {
+    let menus = document.getElementsByClassName('el-menu--popup');
+    for (let index = 0; index < menus.length; index++) {
+      const element = menus[index];
+      element.style.padding = '0';
+      element.style.background = 'transparent';
+    }
+  },
   computed: {},
   methods: {
     handleSelect(key, keyPath) {
@@ -262,6 +369,11 @@ ul {
 li {
   margin: 0;
   padding: 0;
+}
+.textOver {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .menus {
   position: relative;
@@ -468,13 +580,95 @@ li {
 /deep/.el-carousel__indicators--horizontal {
   display: none;
 }
+
 .main {
+  display: flex;
+  align-items: flex-end;
   position: absolute;
   bottom: 80px;
-  color: #000;
-  z-index: 9999;
-  background: #fff;
-  height: 56px;
+  z-index: 999;
+}
+.mainTit {
+  font-size: 12px;
+  display: block;
+  height: 60px;
+  transition: height 1s;
+  background-color: rgba(204, 204, 204, 0.8);
+}
+.mainTit:hover {
+  height: 326px;
+}
+
+// 主体左边
+.mainLeft {
+  height: 326px;
+}
+.mainLeft .mainLeftTop {
+  height: 60px;
+  line-height: 60px;
+}
+.leftTopTit {
+  height: 60px;
+  line-height: 60px;
+}
+.leftTopTit span {
+  font-size: 18px;
+  color: #333;
+}
+.leftTopTit .el-link {
+  color: #333;
+  padding: 0 5px;
+}
+.leftTopLink {
+  height: 60px;
+  line-height: 60px;
+}
+.leftTopLink .el-link {
+  color: #333;
+}
+.leftTopLink .el-link.active {
+  color: #850000;
+}
+.leftDownList {
+  font-size: 14px;
+  color: #333;
+  padding: 12px 5px;
+  border-bottom: 1px dashed #ffffff;
+}
+.leftDownlink:hover {
+  color: #850000;
+  cursor: pointer;
+}
+.comHover:hover {
+  text-decoration: underline;
+}
+/deep/.el-calendar {
+  background-color: #850000;
+}
+/deep/.el-calendar-table .el-calendar-day {
+  height: 30px;
+  padding: 7px;
+}
+/deep/.el-calendar-table thead th {
+  color: #fff;
+}
+/deep/.el-calendar__title {
+  color: #fff;
+}
+/deep/.el-calendar__header {
+  padding: 12px 10px;
+}
+/deep/.el-button--mini {
+  padding: 7px 8px;
+}
+.guanbiBtn {
+  padding: 2px;
+  border-radius: 0;
+  position: absolute;
+  top: -4px;
+  right: 0;
+  z-index: 99999;
+  background: #ccc;
 }
 .down {
   position: absolute;
@@ -486,6 +680,7 @@ li {
   background: #cccccc;
   color: #003264;
   text-align: left;
+  border-top: 15px solid #850000;
 }
 .down .text {
   font-size: 14px;
