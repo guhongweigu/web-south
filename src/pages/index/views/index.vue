@@ -190,7 +190,7 @@
               <el-col :span="7" class="mainLeft">
                 <el-col :span="24" class="mainLeftTop">
                   <el-col :span="3" class="leftTopImg">
-                    图片
+                    <el-image style="width: 35px; height: 60px" :src="titleurl"></el-image>
                   </el-col>
                   <el-col :span="10" class="leftTopTit">
                     <span>就业新闻</span>
@@ -212,7 +212,7 @@
               <el-col :span="12">
                 <el-col :span="24" class="mainLeftTop">
                   <el-col :span="3" class="leftTopImg">
-                    图片
+                    <el-image style="width: 35px; height: 60px" :src="titleurl"></el-image>
                   </el-col>
                   <el-col :span="8" class="leftTopTit">
                     <span>校内宣讲会</span>
@@ -296,6 +296,7 @@ export default {
     imgList: [{ url: require('@/assets/banner.jpg') }, { url: require('@/assets/banner2.jpg') }, { url: require('@/assets/banner3.jpg') }],
     url: require('@/assets/logo1.jpg'),
     urlSchool: require('@/assets/school.jpg'),
+    titleurl: require('@/assets/title.png'),
     activeIndex: '',
     tags: [{ name: '校内宣讲会' }, { name: '校外宣讲会' }, { name: '双选会' }, { name: '在线招聘' }],
     tags1: [
