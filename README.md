@@ -1,4 +1,4 @@
-# web-project
+# web-south
 
 ## Project setup
 ```
